@@ -3,11 +3,12 @@ class Trash {
         var options = {
             isStatic : true,
             friction : 1,
-            density : 1
+            density : 0.1
         }
         this.body = Bodies.rectangle(x, y, width, height, options);
         this.width = width;
         this.height = height;
+        this.image = loadImage('Dustbin.png');
 
         World.add(world, this.body);
     }
@@ -17,8 +18,10 @@ class Trash {
         push();
         translate(pos.x, pos.y);
         rectMode(CENTER);
-        fill("white");
+        fill("green");
         rect(0, 0, this.width, this.height);
+        imageMode(CENTER);
+        image(this.image,1430,640,135,130);
         pop();
     }
 }

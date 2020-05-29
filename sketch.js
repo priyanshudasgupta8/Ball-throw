@@ -10,8 +10,7 @@ var dustb1, dustb2, dustb3;
 var paper;
 var ground;
 
-function preload()
-{
+function preload(){
 	
 }
 
@@ -28,13 +27,13 @@ function setup() {
 
 	//Create a Ground
 	//ground = Bodies.rectangle(width/2, y, width, 10 , {isStatic:true} );
-	 //World.add(world, ground);
+	//World.add(world, ground);
 	 
-	dustb1 = new Trash(1370,660,10,100);
-	dustb2 = new Trash(1490,660,10,100);
-	dustb3 = new Trash(1430,685,125,10);
+	dustb1 = new Trash(1370,640,10,125);
+	dustb2 = new Trash(1490,640,10,125);
+	dustb3 = new Trash(1430,685,110,10);
 
-	paper = new Paper(100,300,15);
+	paper = new Paper(100,300,35,35);
 
 	ground = new Ground(width/2,700,width,20);
 
@@ -45,7 +44,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(200);
   Engine.update(engine);
 
   dustb1.display();
@@ -64,12 +63,12 @@ function draw() {
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
 
-		Matter.Body.applyForce(paper.body, paper.body.position,{x:2, y:-2.75});
+		Matter.Body.applyForce(paper.body, paper.body.position,{x:5, y:-5.75});
 
 	}
 	if (keyCode === DOWN_ARROW) {
 
-		Matter.Body.applyForce(paper.body, paper.body.position,{x:2,y:2.75});
+		Matter.Body.applyForce(paper.body, paper.body.position,{x:5,y:5.75});
 
 	}
 }
